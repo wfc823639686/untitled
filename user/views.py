@@ -24,3 +24,10 @@ def user_list(request):
         """
     r = orm.select_list(sql, request.GET, ["ps['name'] != None"], cl=User)
     return r
+
+
+def user_list1(request):
+    ew = orm.EntityWrapper()
+    ew.eq('us_name', 'wfc')
+    r = User.select(ew, pi=1)
+    return r

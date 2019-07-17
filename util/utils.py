@@ -3,6 +3,7 @@ import json
 from datetime import datetime
 from datetime import date
 from decimal import Decimal
+from ormplus import orm
 
 
 def log(t):
@@ -34,6 +35,6 @@ class WebJsonEncoder(json.JSONEncoder):
             return obj.__str__()
         if isinstance(obj, Decimal):
             return obj.__str__()
-        if isinstance(obj, ApiResult):
+        if isinstance(obj, dict):
             return obj.__dict__
         return json.JSONEncoder.default(self, obj)

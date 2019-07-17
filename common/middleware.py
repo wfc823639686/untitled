@@ -18,4 +18,4 @@ class ApiResultMiddleware(MiddlewareMixin):
             return response
         if isinstance(response, ApiResult):
             return JsonResponse(response, encoder=WebJsonEncoder, safe=False)
-        return JsonResponse({'code': 0, 'msg': '', 'data': response}, safe=False)
+        return JsonResponse({'code': 0, 'msg': '', 'data': response}, encoder=WebJsonEncoder, safe=False)

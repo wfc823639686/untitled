@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('test', uv.save_or_upd),
     path('user_list', uv.user_list),
+    path('user_list1', uv.user_list1),
 ]
